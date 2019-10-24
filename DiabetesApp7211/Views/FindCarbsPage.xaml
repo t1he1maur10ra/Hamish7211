@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DiabetesApp7211.Views.FindCarbsPage" Title="FIND CARBS" BackgroundColor="{StaticResource AppBackgroundColor}" NavigationPage.HasBackButton="True">
+
+    <AbsoluteLayout>
+
+        <!-- Page Header -->
+        <Grid Padding="15" Margin="5,5,5,0" BackgroundColor="{StaticResource HeaderBackgroundColor}" AbsoluteLayout.LayoutBounds=".5,0,1,.12" AbsoluteLayout.LayoutFlags="All">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Image Source="fork_knife.png" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="0" Grid.Column="0" />
+            <Label Style="{StaticResource PageHeaderLabel}" Grid.Row="0" Grid.Column="1" />
+        </Grid>
+
+        <!-- Current BG Reading -->
+        <BoxView x:Name="bgNum" BackgroundColor="Gray" AbsoluteLayout.LayoutBounds="0.5,0.2,1,0.25" AbsoluteLayout.LayoutFlags="All" />
+
+        <!-- Maps, showing nearest dairies -->
+        <ScrollView AbsoluteLayout.LayoutBounds="0.5,0.75,1,0.45" AbsoluteLayout.LayoutFlags="All">
+            <StackLayout BackgroundColor="LightGray" Margin="5" Padding="10">
+                <Label Text="Press the 'OPEN MAPS' button to find nearest shops to buy carbs" />
+                <Label Text="Name:" />
+                <Entry x:Name="EntryName" />
+
+                <Label Text="Latitude" Margin="0,24,0,0" />
+                <Entry Keyboard="Numeric" Text="" x:Name="EntryLatitude" />
+
+                <Label Text="Longitude" />
+                <Entry Keyboard="Numeric" Text="" x:Name="EntryLongitude" />
+
+                <Button Text="Open Maps" x:Name="ButtonOpenMaps" Clicked="ButtonOpenMaps_Clicked" />
+            </StackLayout>
+        </ScrollView>
+
+
+
+        <!-- Home Button -->
+        <ImageButton Source="home-circle.png" Margin="0,0,0,20" Clicked="Handle_HomeButtonClicked" AbsoluteLayout.LayoutBounds=".5,1,100,100" AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+    </AbsoluteLayout>
+</ContentPage>

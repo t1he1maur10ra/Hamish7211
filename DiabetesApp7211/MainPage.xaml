@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:extensions="clr-namespace:DiabetesApp7211.Extensions" xmlns:Forms9Patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" mc:Ignorable="d" x:Class="DiabetesApp7211.MainPage" Title="Home" BackgroundColor="{StaticResource AppBackgroundColor}" NavigationPage.HasNavigationBar="False">
+
+    <!-- Content Page Padding-->
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS, Android" Value="0,40,0,0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <AbsoluteLayout>
+        <!-- Logo -->
+        <Image x:Name="logo" Source="KeepSafeLogo.png" AbsoluteLayout.LayoutBounds="0.5,0,1,0.2" AbsoluteLayout.LayoutFlags="All" />
+
+        <!-- Divider Line-->
+        <BoxView HeightRequest="2" BackgroundColor="{StaticResource ButtonBackgroundColor}" AbsoluteLayout.LayoutBounds="0.5, 0.18,1,.002" AbsoluteLayout.LayoutFlags="All" />
+
+        <!-- User Icon -->
+        <ImageButton x:Name="user" Source="user.png" Margin="10,0" Clicked="Handle_UserIconClicked" AbsoluteLayout.LayoutBounds="0,0.17,0.12,0.12" AbsoluteLayout.LayoutFlags="All" />
+
+        <Grid AbsoluteLayout.LayoutBounds="0,0.3,1,0.12" AbsoluteLayout.LayoutFlags="All" Margin="20,5">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0" x:Name="WelcomeMessageName" FontSize="34" />
+            <Label Grid.Column="0" Grid.Row="1" x:Name="WelcomeMessageBg" FontSize=" 22" />
+            <Label Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" x:Name="CurrentBgNum" FontSize="60" VerticalTextAlignment="Start" HorizontalTextAlignment="Center" />
+            <Label Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Text="mmol" FontSize="16" VerticalTextAlignment="End" HorizontalTextAlignment="Center" />
+        </Grid>
+
+
+        <!-- BG Line Graph -->
+        <forms:ChartView AbsoluteLayout.LayoutBounds="0.5,0.72,1,0.38" AbsoluteLayout.LayoutFlags="All" x:Name="Chart1" HeightRequest="150" />
+
+        <!-- Emergency Button -->
+        <Forms9Patch:Button Margin="10,0,10,10" Text="EMERGENCY" SynchronizedFontSize="30" HorizontalTextAlignment="Start" FontAttributes="Bold" BorderRadius="10" Padding="10" AutoFit="Width" HasTightSpacing="True" TrailingImage="False" Spacing="10" TextColor="{StaticResource HeaderTextColor}" BackgroundColor="{StaticResource HeaderBackgroundColor}" Clicked="Handle_EmergencyButtonClicked" AbsoluteLayout.LayoutBounds="0.5,1,1,0.12" AbsoluteLayout.LayoutFlags="All">
+            <Forms9Patch:Button.IconImage>
+                <Forms9Patch:Image Source="warning.png" WidthRequest="66" />
+            </Forms9Patch:Button.IconImage>
+        </Forms9Patch:Button>
+
+    </AbsoluteLayout>
+
+</ContentPage>

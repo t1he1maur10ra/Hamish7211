@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:extensions="clr-namespace:DiabetesApp7211.Extensions" x:Class="DiabetesApp7211.Views.SettingsPage" Title="SETTINGS" BackgroundColor="{StaticResource AppBackgroundColor}" NavigationPage.HasNavigationBar="True">
+
+    <AbsoluteLayout>
+        <!-- Page Header -->
+        <StackLayout Padding="20,15" Margin="5,5,5,0" Orientation="Horizontal" BackgroundColor="{StaticResource HeaderBackgroundColor}" AbsoluteLayout.LayoutBounds=".5,0,1,.12" AbsoluteLayout.LayoutFlags="All">
+
+            <Image Source="settings.png" Margin="0,0,20,0" />
+            <Label Text="{Binding Title}" Style="{StaticResource PageHeaderLabel}" />
+        </StackLayout>
+
+        <!-- Entry Fields -->
+        <Grid RowSpacing="0" AbsoluteLayout.LayoutBounds=".5,0.5,1,0.6" AbsoluteLayout.LayoutFlags="All">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Text="Setup your device" HorizontalTextAlignment="Center" FontSize="Title" FontFamily="{StaticResource LatoBoldFont}" FontAttributes="Bold" TextColor="{StaticResource BodyTextColor}" Grid.Column="0" Grid.Row="0" />
+            <Entry x:Name="FirstNameEntry" Text="{Binding FirstName}" Grid.Column="0" Grid.Row="1" Placeholder="First name" Style="{StaticResource EntryFormFields}" Keyboard="Default" Margin="30,5" />
+            <Entry x:Name="LastNameEntry" Text="{Binding LastName}" Grid.Column="0" Grid.Row="2" Placeholder="Last name" Style="{StaticResource EntryFormFields}" Keyboard="Default" Margin="30,5" />
+            <Entry x:Name="FollowerNameEntry" Text="{Binding FollowerName}" Grid.Column="0" Grid.Row="3" Placeholder="Follower name" Style="{StaticResource EntryFormFields}" Margin="30,5" Keyboard="Default" />
+            <Entry x:Name="FollowerMobileEntry" Text="{Binding FollowerNumber}" Grid.Column="0" Grid.Row="4" Placeholder="Follower mobile number" Style="{StaticResource EntryFormFields}" Margin="30,5" Keyboard="Numeric" />
+            <Entry x:Name="NightscoutUrlEntry" Text="{Binding NightscoutUrl}" Grid.Column="0" Grid.Row="5" Placeholder="Your Nightscout URL" Style="{StaticResource EntryFormFields}" Margin="30,5" Keyboard="Email" />
+
+            <!-- Error Messages -->
+            <Label x:Name="PhoneNumError" FontSize="Micro" TextColor="{StaticResource ButtonBackgroundColor}" FontFamily="{StaticResource LatoRegularFont}" HorizontalTextAlignment="Center" VerticalTextAlignment="End" Margin="40,0" Grid.Column="0" Grid.Row="4" />
+            <Label x:Name="NightscoutUrlError" FontSize="Micro" TextColor="{StaticResource ButtonBackgroundColor}" FontFamily="{StaticResource LatoRegularFont}" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" Margin="40,0" Grid.Column="0" Grid.Row="6" />
+
+            <!-- Submit Btn -->
+            <!--<Button Text="SUBMIT" TextColor="{StaticResource ButtonTextColor}" FontSize="Title" FontAttributes="Bold" BackgroundColor="{StaticResource ButtonBackgroundColor}" Margin="30,0" Clicked="Handle_SubmitButtonClicked" Grid.Column="0" Grid.Row="7" />-->
+        </Grid>
+
+        <!-- Home Button -->
+        <ImageButton Source="home-circle.png" Margin="0,0,0,20" Clicked="Handle_HomeButtonClicked" AbsoluteLayout.LayoutBounds=".5,1,100,100" AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+    </AbsoluteLayout>
+</ContentPage>

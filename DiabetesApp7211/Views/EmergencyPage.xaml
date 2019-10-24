@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Visual="Material" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Forms9Patch="clr-namespace:Forms9Patch;assembly=Forms9Patch" x:Class="DiabetesApp7211.Views.EmergencyPage" Title="Emergency" BackgroundColor="{StaticResource AppBackgroundColor}" NavigationPage.HasBackButton="True" NavigationPage.BackButtonTitle="Back">
+
+    <AbsoluteLayout>
+        <!-- Page Header -->
+        <Grid Padding="15" Margin="5,5,5,0" BackgroundColor="{StaticResource HeaderBackgroundColor}" AbsoluteLayout.LayoutBounds=".5,0,1,.12" AbsoluteLayout.LayoutFlags="All">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Image Source="warning.png" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="0" Grid.Column="0" />
+            <Label Style="{StaticResource PageHeaderLabel}" Grid.Row="0" Grid.Column="1" />
+        </Grid>
+
+        <!-- Current BG Reading -->
+           <Grid AbsoluteLayout.LayoutBounds="0,0.3,1,0.12" AbsoluteLayout.LayoutFlags="All" Margin="20,5">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0" x:Name="WelcomeMessageName" FontSize="34" />
+            <Label Grid.Column="0" Grid.Row="1" x:Name="WelcomeMessageBg" FontSize=" 22" />
+            <Label Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" x:Name="CurrentBgNum" FontSize="60" VerticalTextAlignment="Start" HorizontalTextAlignment="Center" />
+            <Label Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Text="mmol" FontSize="16" VerticalTextAlignment="End" HorizontalTextAlignment="Center" />
+        </Grid>
+
+
+        <!-- Buttons -->
+        <!-- Call Follower -->
+        <!-- Forms9Patch -->
+        <Forms9Patch:Button Margin="10,0,10,10" HasShadow="True" Text="CALL FOLLOWER" FontSize="30" HorizontalTextAlignment="Start" FontAttributes="Bold" BorderRadius="10" Padding="10" AutoFit="Width" HasTightSpacing="True" TrailingImage="False" Spacing="10" TextColor="{StaticResource ButtonTextColor}" BackgroundColor="{StaticResource ButtonBackgroundColor}" Clicked="Handle_CallFollowerClicked" AbsoluteLayout.LayoutBounds="0.5,0.5,1,0.12" AbsoluteLayout.LayoutFlags="All">
+            <Forms9Patch:Button.IconImage>
+                <Forms9Patch:Image Source="telephone_white.png" TintColor="White" WidthRequest="66" />
+            </Forms9Patch:Button.IconImage>
+        </Forms9Patch:Button>
+
+
+        <!-- Send Location -->
+        <Forms9Patch:Button Margin="10,0,10,10" HasShadow="True" Text="SEND LOCATION" FontSize="30" HorizontalTextAlignment="Start" FontAttributes="Bold" BorderRadius="10" Padding="10" AutoFit="Width" HasTightSpacing="True" TrailingImage="False" Spacing="10" TextColor="{StaticResource ButtonTextColor}" BackgroundColor="{StaticResource ButtonBackgroundColor}" Clicked="Handle_SendLocationClicked" AbsoluteLayout.LayoutBounds="0.5,0.65,1,0.12" AbsoluteLayout.LayoutFlags="All">
+            <Forms9Patch:Button.IconImage>
+                <Forms9Patch:Image Source="speech_bubbles_black.png" TintColor="White" WidthRequest="66" />
+            </Forms9Patch:Button.IconImage>
+        </Forms9Patch:Button>
+
+        <!-- Find Carbs -->
+        <Forms9Patch:Button Margin="10,0,10,10" HasShadow="True" Text="FIND CARBS" FontSize="30" HorizontalTextAlignment="Start" FontAttributes="Bold" BorderRadius="10" Padding="10" AutoFit="Width" HasTightSpacing="True" TrailingImage="False" Spacing="10" TextColor="{StaticResource ButtonTextColor}" BackgroundColor="{StaticResource ButtonBackgroundColor}" Clicked="Handle_FindCarbsClicked" AbsoluteLayout.LayoutBounds="0.5,0.8,1,0.12" AbsoluteLayout.LayoutFlags="All">
+            <Forms9Patch:Button.IconImage>
+                <Forms9Patch:Image Source="fork_knife_white.png" TintColor="White" WidthRequest="66" />
+            </Forms9Patch:Button.IconImage>
+        </Forms9Patch:Button>
+
+        <!-- Home Button -->
+        <ImageButton Source="home-circle.png" Margin="0,0,0,20" Clicked="Handle_HomeButtonClicked" AbsoluteLayout.LayoutBounds=".5,1,100,100" AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DiabetesApp7211.Extensions.HomeButton">
+
+    <AbsoluteLayout>
+
+        <Grid Padding="0" Margin="0,0,0,25" BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds=".5,1,100,100" AbsoluteLayout.LayoutFlags="PositionProportional">
+
+            <ImageButton Source="home-circle.png" Clicked="Handle_HomeBtnClicked" />
+        </Grid>
+
+    </AbsoluteLayout>
+
+</Grid>
