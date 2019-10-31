@@ -26,15 +26,32 @@ namespace DiabetesApp7211.Views
             Navigation.PushAsync(new MainPage());
         }
 
-        void Button_Clicked(object sender, System.EventArgs e)
+
+        private void Button_Clicked_1(object sender, EventArgs e)
         {
+            string num = EntryNumber.Text;
+            Console.WriteLine(num);
             try
             {
-                PhoneDialer.Open(EntryNumber.Text);
+                PhoneDialer.Open(num);
             }
             catch (Exception ex)
             {
                 DisplayAlert("Unable to make call", "Please enter a number", "OK");
+            }
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            string num = EntryNumber.Text;
+            Console.WriteLine("Number: " + num);
+            try
+            {
+                PhoneDialer.Open(num);
+            }
+            catch(Exception ex)
+            {
+                DisplayAlert("Unable to make call", ex.ToString(), "OK");
             }
         }
     }

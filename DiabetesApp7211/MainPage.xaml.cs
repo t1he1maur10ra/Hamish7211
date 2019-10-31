@@ -23,25 +23,36 @@ namespace DiabetesApp7211
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        static List<int> sgvData = new List<int>();
-        static List<Entry> microchartsEntries = new List<Entry>();
-        string firstName = "Test";
+        public static List<int> sgvData = new List<int>();
+        public static List<Entry> microchartsEntries = new List<Entry>();
+        public string firstName;
+        public static double currentMmolValue;
         //List<Data> currentData = App.currentData;
-        static double currentMmolValue;
+
 
         public MainPage()
         {
             InitializeComponent();
             BindingContext = Application.Current;
-            currentMmolValue = App.LoadData();
-            Console.WriteLine("App.currentMmolValue => " + currentMmolValue);
-            CurrentBgMessage(firstName, App.currentMmolValue);
+            CreateTestUser();
+            //Console.WriteLine("App.currentMmolValue => " + Application.Current.Properties["currentMmolValue"]);
+            CurrentBgMessage(firstName, currentMmolValue);
             GetSgvValues();
             BuildMicrochartsEntry();
             Chart1.Chart = new PointChart { Entries = microchartsEntries };
             //RefreshApiDataEveryMinute();
         }
-
+        void CreateTestUser()
+        {
+            //Add users name
+            firstName = "TestUser";
+            if (Application.Current.Properties.ContainsKey("FirstName"))
+                Application.Current.Properties["FirstName"] = firstName;
+            else
+                Application.Current.Properties.Add("FirstName", firstName);
+            //Add Mmoval
+            currentMmolValue = (double)Application.Current.Properties["currentMmolValue"];
+        }
         //double currentMmolValue = Helpers.GetCurrentMmolValue();
 
         //void LoadData()
@@ -107,7 +118,7 @@ namespace DiabetesApp7211
 
         void Handle_EmergencyButtonClicked(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new EmergencyPage());
+            Navigation.PushAsync(new EmergencyPage(firstName, currentMmolValue));
         }
     }
 }

@@ -10,14 +10,14 @@ namespace DiabetesApp7211.Views
     public partial class EmergencyPage : ContentPage
     {
         static List<Data> currentData = new List<Data>();
-        string firstName = App.Current.Properties["FirstName"].ToString();
+        string firstName = "Test";//Application.Current.Properties["FirstName"].ToString();
         //double currentMmolValue = Helpers.ConvertToMmol(currentData[0].Sgv);
 
-        public EmergencyPage()
+        public EmergencyPage(string fname, double val)
         {
             InitializeComponent();
             BindingContext = this;
-            CurrentBgMessage(firstName, 10.5);
+            CurrentBgMessage(fname, val);
         }
 
         void CurrentBgMessage(string name, double mmolValue)

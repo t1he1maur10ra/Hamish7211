@@ -19,9 +19,11 @@
         <StackLayout Padding="16" AbsoluteLayout.LayoutBounds=".5,0.3,1,.2" AbsoluteLayout.LayoutFlags="All">
             <Label Text="Press 'DIAL' to call your follower." Style="{StaticResource BodyTextLabel}" Margin="0,0,0,30" />
             <Entry Text="" Placeholder="Phone Number" Style="{StaticResource EntryFormFields}" Keyboard="Telephone" x:Name="EntryNumber" />
-            <Button Text="Dial" FontSize="Title" Clicked="Button_Clicked" />
+            
         </StackLayout>
 
+        <Button Clicked="Button_Clicked" Text="Dial" AbsoluteLayout.LayoutBounds=".5,.7,100,100" AbsoluteLayout.LayoutFlags="PositionProportional"></Button>
+        
         <!-- Home Button -->
         <ImageButton Source="home-circle.png" Margin="0,0,0,20" Clicked="Handle_HomeButtonClicked" AbsoluteLayout.LayoutBounds=".5,1,100,100" AbsoluteLayout.LayoutFlags="PositionProportional" />
 
